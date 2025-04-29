@@ -1,9 +1,9 @@
-import networkx as nx
 import matplotlib.pyplot as plt
 from src.algorithms.dijkstra import dijkstras_algorithm
 from src.algorithms.ac_tree import construct_ac_tree
 from src.algorithms.recursive_dijkstra import recursive_dijkstra
-from src.graph.generator import generate_random_graph, generate_hierarchical_graph
+from src.graph.generator import generate_random_graph
+from src.visualization.graph_viz import print_graph
 from src.visualization.comparison_viz import visualize_comparison
 from src.utils.timing import measure_execution_time
 
@@ -11,11 +11,13 @@ from src.utils.timing import measure_execution_time
 def main():
     # create sample graph
     print("Generating sample graph...")
-    G = generate_hierarchical_graph(n_components=5, component_size=3, connection_probability=0.3)
-    source = 0
-
+    G = generate_random_graph(n_nodes=10, edge_probability=0.3, weight_range=(1, 10))
     print(f"Graph has {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
 
+    # print graph
+    print_graph(G)
+
+    """
     # run traditional dijkstra's
     print("\nRunning traditional Dijkstra's algorithm...")
     dijkstra_time, (distances_dijkstra, paths_dijkstra, operations_dijkstra) = measure_execution_time(
@@ -28,7 +30,7 @@ def main():
 
     # run recursive dijkstra's algorithm
     print("\nRunning Recursive Dijkstra's algorithm...")
-    recursive_time, (distances_recursive, paths_recursvie, operations_recursive) = measure_execution_time(
+    recursive_time, (distances_recursive, paths_recursive, operations_recursive) = measure_execution_time(
         recursive_dijkstra, G, source, ac_tree, return_operations=True
     )
 
@@ -48,15 +50,16 @@ def main():
           f"{operations_dijkstra['decrease_key']} decrease-key operations")
     print(f"Recursive Dijkstra's: {operations_recursive['extract_min']} extract-min, "
           f"{operations_recursive['decrease_key']} decrease-key operations")
-
+          
     # visualize comparison
     visualize_comparison(G, source, ac_tree,
                          distances_dijkstra, paths_dijkstra,
-                         distances_recursive, paths_recursvie,
+                         distances_recursive, paths_recursive,
                          operations_dijkstra, operations_recursive)
 
     print("\nVisualization complete. Close plot windows to exit.")
     plt.show()
+    """
 
 
 if __name__ == "__main__":
