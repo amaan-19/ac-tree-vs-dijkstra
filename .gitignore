@@ -1,0 +1,46 @@
+# .gitignore for Visual Studio and common web development files
+
+# Visual Studio files
+.vs/
+*.vsidx
+*.vspscc
+*.vssscc
+*.user
+*.suo
+*.cache
+*.pdb
+*.dll.config
+*.exe.config
+bin/
+obj/
+TestResults/
+[Dd]ebug/
+[Rr]elease/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnp/
+.pnp.js
+
+# Build results
+build/
+dist/
+out/
+
+# IDE files
+.idea/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
