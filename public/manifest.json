@@ -1,0 +1,115 @@
+{
+    "short_name": "A-C Tree Viz",
+    "name": "A-C Tree Visualization Tool",
+    "description": "Interactive visualization tool for exploring acyclic-connected tree shortest path algorithms",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logo512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#2563eb",
+    "background_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "categories": [ "education", "productivity", "utilities" ],
+    "screenshots": [
+        {
+            "src": "screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "A-C Tree algorithm visualization interface"
+        },
+        {
+            "src": "screenshot-narrow.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Mobile view of graph visualization"
+        }
+    ],
+    "lang": "en",
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "shortcuts": [
+        {
+            "name": "Graph View",
+            "short_name": "Graph",
+            "description": "View and edit the graph structure",
+            "url": "/?view=graph",
+            "icons": [
+                {
+                    "src": "icon-graph.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Run Algorithms",
+            "short_name": "Run",
+            "description": "Execute shortest path algorithms",
+            "url": "/?action=run",
+            "icons": [
+                {
+                    "src": "icon-play.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Performance Analysis",
+            "short_name": "Performance",
+            "description": "View algorithm performance comparison",
+            "url": "/?view=performance",
+            "icons": [
+                {
+                    "src": "icon-chart.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "share_target": {
+        "action": "/share-target/",
+        "method": "POST",
+        "enctype": "multipart/form-data",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url",
+            "files": [
+                {
+                    "name": "graph",
+                    "accept": [ ".json", ".csv" ]
+                }
+            ]
+        }
+    },
+    "protocol_handlers": [
+        {
+            "protocol": "web+actree",
+            "url": "/?import=%s"
+        }
+    ],
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    }
+}
