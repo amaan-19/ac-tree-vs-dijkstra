@@ -184,7 +184,7 @@ If you use this visualization tool in your research or education, please cite th
 
 For questions about the visualization tool:
 - Open an issue on GitHub
-- Contact: [your-email@example.com]
+- Contact: amaanakhan523@gmail.com
 
 For questions about the algorithm or paper:
 - Refer to the original research paper
